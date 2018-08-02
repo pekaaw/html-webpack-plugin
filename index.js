@@ -588,7 +588,7 @@ class HtmlWebpackPlugin {
       }
 
       // Append assets to head element
-      html = html.replace(headRegExp, match => head.join('') + match);
+      html = html.replace(headRegExp, match => '\t' + head.join('\n\t\t') + '\n\t' + match);
     }
 
     // Inject manifest into the opening html tag
