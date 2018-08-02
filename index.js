@@ -570,7 +570,7 @@ class HtmlWebpackPlugin {
     if (body.length) {
       if (bodyRegExp.test(html)) {
         // Append assets to body element
-        html = html.replace(bodyRegExp, match => body.join('') + match);
+        html = html.replace(bodyRegExp, match => '\t' + body.join('\n\t\t') + '\n\t' + match);
       } else {
         // Append scripts to the end of the file if no <body> element exists:
         html += body.join('');
